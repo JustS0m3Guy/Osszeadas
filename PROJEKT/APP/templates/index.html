@@ -11,8 +11,16 @@
         <title>Document</title>
     </head>
     <body>
-        <div class="hi">
-            Hello world
+        <div class="kerdes">
+            Mennyi a válasz?
         </div>
+
+        <form action="POST">
+            {% csrf_token %}
+            <input type="radio" name="radiogomb" value="">
+            <input type="radio" name="radiogomb" value="">
+            <input type="radio" name="radiogomb" value="">
+            <input type="radio" name="radiogomb" value="">
+        </form>
     </body>
 </html>
