@@ -24,10 +24,10 @@
             <input type="hidden" name="oldquestionb" value="{{questionb}}">
             {% for elem in list1 %}
                 <div>
-                    <p><input type="radio" name="awnser" value="{{elem}}"> {{elem}}</p>
+                    <p><input type="radio" name="awnser" value="{{elem}}" class="radiobutton" id="{{elem}}"> <label for="{{elem}}">{{elem}}</label></p>
                 </div>
             {% endfor %}
-            <button type="submit">Submit</button>
+            <button type="submit" class="sumbutton">Submit</button>
 
         </form>
 
@@ -35,11 +35,11 @@
 
             {% if correct %}
 
-            <div>Correct!</div>
+            <div class="awnser">Correct!</div>
 
             {% else %}
 
-            <div>No, you bad!</div>
+            <div class="awnser">No, you bad!</div>
 
             {% endif %}
 
