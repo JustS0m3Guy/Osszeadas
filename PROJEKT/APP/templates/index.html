@@ -12,14 +12,16 @@
     </head>
     <body>
         <div class="kerdes">
-            If you plug in {{pla}} and {{plb}} into the secret formula you get {{plawns}}
+            If you plug in {{pla}} and {{plb}} into the secret formula you get {{plawns}},
         </div>
         <div class="kerdes">
-            What happens if you plug in {{questiona}} and {{questionb}}?
+            what happens if you plug in {{questiona}} and {{questionb}}?
         </div>
 
-        <form action="POST">
+        <form method="POST">
             {% csrf_token %}
+            <input type="hidden" name="oldquestiona" value="{{questiona}}">
+            <input type="hidden" name="oldquestionb" value="{{questionb}}">
             {% for elem in list1 %}
                 <div>
                     <p><input type="radio" name="awnser" value="{{elem}}"> {{elem}}</p>
@@ -27,19 +29,21 @@
             {% endfor %}
             <button type="submit">Submit</button>
 
-            {% if user_awnsered %}
+        </form>
 
-                {% if correct %}
+        {% if user_awnsered %}
 
-                <div>Correct!</div>
+            {% if correct %}
 
-                {% else %}
+            <div>Correct!</div>
 
-                <div>No, you bad!</div>
+            {% else %}
 
-                {% endif %}
+            <div>No, you bad!</div>
 
             {% endif %}
-        </form>
+
+        {% endif %}
+        
     </body>
 </html>

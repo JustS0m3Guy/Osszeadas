@@ -27,12 +27,15 @@ def index(request):
         oldquestiona = int(request.POST['oldquestiona'])
         oldquestionb = int(request.POST['oldquestionb'])
         oldquestionawns_from_user = int(request.POST['awnser'])
-        correct_oldawns = oldquestionawns_from_user(oldquestiona, oldquestionb)
+        correct_oldawns = secretcucc(oldquestiona, oldquestionb)
 
         # print(regifela)
         # print(regifelb)
         # print(regifelmo_user_szerint)
         # print(regifelmo_valojaban)
+        # print()
+        # print(correct_oldawns)
+        # print(oldquestionawns_from_user)
 
         context['correct'] = oldquestionawns_from_user == correct_oldawns
     return render(request, template, context)
