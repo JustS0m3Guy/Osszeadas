@@ -6,12 +6,12 @@ import random
 # Create your views here.
 
 def index(request):
-    pla = randint(1,100)
-    plb = randint(1,100)
-    questiona = randint(1,100)
-    questionb = randint(1,100)
+    pla = randint(1,10)
+    plb = randint(1,10)
+    questiona = randint(1,10)
+    questionb = randint(1,10)
     plawns = secretcucc(pla,plb)
-    list1=[wrongformula1(pla,plb),wrongformula2(pla,plb),wrongformula3(pla,plb),secretcucc(questiona, questionb)]
+    list1=[wrongformula1(questiona,questionb),wrongformula2(questiona,questionb),wrongformula3(questiona,questionb),secretcucc(questiona, questionb)]
     shuffledList = random.sample(list1, len(list1))
     template='index.html'
     context={
