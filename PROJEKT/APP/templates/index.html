@@ -20,11 +20,26 @@
 
         <form action="POST">
             {% csrf_token %}
-            <input type="radio" name="radiogomb" value="">
-            <input type="radio" name="radiogomb" value="">
-            <input type="radio" name="radiogomb" value="">
-            <input type="radio" name="radiogomb" value="">
+            {% for elem in list1 %}
+                <div>
+                    <p><input type="radio" name="awnser" value="{{elem}}"> {{elem}}</p>
+                </div>
+            {% endfor %}
             <button type="submit">Submit</button>
+
+            {% if user_awnsered %}
+
+                {% if correct %}
+
+                <div>Correct!</div>
+
+                {% else %}
+
+                <div>Correct!</div>
+
+                {% endif %}
+                
+            {% endif %}
         </form>
     </body>
 </html>
